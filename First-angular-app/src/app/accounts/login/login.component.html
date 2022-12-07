@@ -1,0 +1,10 @@
+<h2 [hover]="'green'" [alternateColor]="'blue'">Login Page</h2>
+<label>User Name:</label><br>
+<input type="text" #txtUsername placeholder="UserName" [value]="username" (input)="setUserName(txtUsername.value)"><br>
+<label >Password:</label><br>
+<input type="password" #txtPassword placeholder="Password" [value]="password"
+    (input)="setPassword(txtPassword.value)"><br><br>
+<input class="btn" type="button" value="Login" (click)="login()">
+<input class="btn" type="button" value="Clear" (click)="clear()">
+
+<label>Status:{{StatusMsg}}</label>

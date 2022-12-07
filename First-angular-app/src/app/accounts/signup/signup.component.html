@@ -1,0 +1,41 @@
+<div class="card text-center">
+        <form [formGroup]="signUpModel" (ngSubmit)="signUp()">
+            <h3>SignUp Page</h3>
+            <label>User Name:</label><br>
+            <input type="text"  placeholder="UserName" formControlName="name"><br>
+            <div *ngIf="signUpModel.controls['name'].errors">
+                <p [hover]="'red'" *ngIf="signUpModel.controls['name'].errors['required']">
+                    *Username is required.
+                </p>
+            </div>
+            <label>Password:</label><br>
+            <input type="password"  placeholder="Password" formControlName="password"><br>
+            <div *ngIf="signUpModel.controls['password'].errors">
+                <p  [hover]="'red'" *ngIf="signUpModel.controls['password'].errors['required']">
+                    *Password is required.
+                </p>
+        
+            </div>
+            <label>Email:</label><br>
+            <input type="email"  placeholder="Email" formControlName="mail"><br>
+            <div *ngIf="signUpModel.controls['mail'].errors">
+                <p [hover]="'red'" *ngIf="signUpModel.controls['mail'].errors['required']">
+                    *Email is required.
+                </p>
+        
+            </div>
+            <br>
+            <input class="btn btn-primary m-1" type="submit" value="SignUp">
+            <input class="btn btn-secondary m-1" type="button" value="Clear" (click)="reset()">
+        </form>
+    </div>
+<br>
+<p>Your Details: 
+   <br>
+   Name: <span [hover]="'green'">{{signUpModel.value.name}}</span> 
+   <br>
+   Password:<span [hover]="'green'">{{signUpModel.value.password}}</span>
+   <br>
+   Email: <span [hover]="'green'">{{signUpModel.value.mail}}</span>
+
+</p>
