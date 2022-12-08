@@ -1,9 +1,21 @@
-<div class="container">
-    <heading [content]="heading"></heading>
-    <div class="container">
-        <!-- <login></login> -->
-        <!-- <signup></signup> -->
+<heading [content]="heading"></heading>
+
+<mat-tab-group>
+    <mat-tab label="Login Page">
+        <div>
+            <login></login>
+        </div>
+    </mat-tab>
+    <mat-tab label="Signup Page">
+        <signup></signup>
+    </mat-tab>
+    <mat-tab label="Feedback Page">
         <app-feedback></app-feedback>
-    </div>
-    <copyright [footercontent]="footer"></copyright>
-</div>
+    </mat-tab>
+</mat-tab-group>
+<!-- <div class="container">
+        <login></login> 
+        <signup></signup>
+        <app-feedback></app-feedback>
+    </div> -->
+<copyright [footercontent]="footer"></copyright>

@@ -3,3 +3,6 @@ heading{
     text-align: center;
     /* top: 0; */
 }
+mat-tab-group {
+    background-color: #cdcece;
+}

@@ -20,7 +20,9 @@ export class LoginComponent {
     username: string = "";
     password: string = "";
     StatusMsg: string = "";
+    IsStatusMsg:boolean=false;
     login(): void {
+        this.IsStatusMsg=true;
         this.loggerRef.write("Login button clicked")
         if (this.username == "admin" && this.password == "Test123") {
             this.StatusMsg = " valid credentials";
@@ -31,6 +33,7 @@ export class LoginComponent {
         }
     }
     clear(): void {
+        this.IsStatusMsg=false;
         this.loggerRef.write("clear button clicked")
         // this.userNameTextbox.nativeElement.value="";
         this.username = "";

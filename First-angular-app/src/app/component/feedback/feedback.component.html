@@ -1,4 +1,45 @@
-<div>
+<mat-card>
+    <mat-card-header>
+        <mat-label>Feedback Form</mat-label>
+    </mat-card-header>
+    <mat-card-content>
+        <form ngForm (ngSubmit)="submit()">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input type="text" matInput name="usernamebox" placeholder="Username" [(ngModel)]="username" #usernamecontrol="ngModel" required>
+            </mat-form-field>
+            <div *ngIf="usernamecontrol.errors">
+                <mat-label [hover]="'red'" *ngIf="usernamecontrol.errors['required']">*Username is required</mat-label>
+            </div>
+            <br>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="text" matInput name="emailbox" placeholder="Email" [(ngModel)]="email" #emailcontrol="ngModel" required>
+            </mat-form-field>
+            <div *ngIf="emailcontrol.errors">
+                <mat-label [hover]="'red'" *ngIf="emailcontrol.errors['required']">*Email is required</mat-label>
+            </div>
+            <br>
+            <mat-form-field>
+                <mat-label>Message</mat-label>
+                <textarea cols="80" rows="3" placeholder="Your message" matInput name="feedbackbox" [(ngModel)]="feedback" #feedbackcontrol="ngModel" required></textarea>
+            </mat-form-field>
+            <div *ngIf="feedbackcontrol.errors">
+                <mat-label [hover]="'red'" *ngIf="feedbackcontrol.errors['required']">*Message is required</mat-label>
+            </div>
+            <br>
+            <button class="btn" type="submit" mat-raised-button color="primary"><mat-icon>check</mat-icon>Submit</button>
+            <button class="btn"  mat-raised-button color="secondary" (click)="clear()"> <mat-icon>restart_alt</mat-icon>Clear</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+
+<form ngForm (ngSubmit)="submit()">
+
+</form>
+
+<!-- <div>
     <form ngForm (ngSubmit)="submit()">
         <h4>Feedback Form</h4>
         <label for="">User Name:</label>
@@ -28,4 +69,4 @@
         <input class="btn btn-primary m-1" type="submit" value="Submit">
         <input class="btn btn-secondary m-1" type="button" value="Clear" (click)="clear()">
     </form>
-</div>
+</div> -->

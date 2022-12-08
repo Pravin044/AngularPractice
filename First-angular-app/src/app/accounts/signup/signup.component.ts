@@ -20,6 +20,8 @@ export class SignUpComponent {
     }
 
     signUp() {
+        console.log("sing u lciked");
+        
         if (this.signUpModel.valid)
             console.log("valid");
         else
