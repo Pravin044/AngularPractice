@@ -1,6 +1,12 @@
-<heading [content]="heading"></heading>
-
-<mat-tab-group>
+<app-header>
+    <!-- transclusion content -->
+    <a href="/accounts"><img class="logo" src="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-petrol-rgb.svg"
+            alt="" srcset=""></a>
+    <heading [content]="'Siemens Device Management'" style="color: white;"></heading>
+</app-header>
+<router-outlet></router-outlet>
+<!-- <app-accounts></app-accounts> -->
+<!-- <mat-tab-group>
     <mat-tab label="Login Page">
         <div>
             <login></login>
@@ -12,7 +18,7 @@
     <mat-tab label="Feedback Page">
         <app-feedback></app-feedback>
     </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
 <!-- <div class="container">
         <login></login> 
         <signup></signup>

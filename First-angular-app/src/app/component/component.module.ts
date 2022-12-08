@@ -9,10 +9,11 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from '@angular/material/card';
-import { MatInputModule} from '@angular/material/input'
+import { MatInputModule} from '@angular/material/input';
+import { HeaderComponent } from './header/header.component'
 @NgModule({
-    declarations:[HeadingComponent,CopyRightComponent, FeedbackComponent],
-    exports:[HeadingComponent,CopyRightComponent,FeedbackComponent],
+    declarations:[HeadingComponent,CopyRightComponent, FeedbackComponent, HeaderComponent],
+    exports:[HeadingComponent,CopyRightComponent,FeedbackComponent,HeaderComponent],
     imports:[DirectivesModule,CommonModule,ReactiveFormsModule,FormsModule,
         MatToolbarModule,MatIconModule,MatButtonModule,MatCardModule,MatInputModule]
 })

@@ -7,6 +7,6 @@ import { Component } from "@angular/core";
 
 })
 export class AppRootComponent {
-    heading: string = "Siemens Angular training";
-    footer:string="Copyright @ Siemens "
+    heading: string = "Siemens Device Managment";
+    footer:string="Siemens 2021-22"
 }

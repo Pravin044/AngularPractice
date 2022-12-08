@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-
+import { Router } from '@angular/router'
 @Component({
     selector: 'signup',
     templateUrl: './signup.component.html',
@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 export class SignUpComponent {
 
     signUpModel: FormGroup;
-    constructor() {
+    constructor(private routerService: Router) {
         this.signUpModel = new FormGroup({
             name: new FormControl("", Validators.required),
             password: new FormControl("", Validators.required),
@@ -21,12 +21,14 @@ export class SignUpComponent {
 
     signUp() {
         console.log("sing u lciked");
-        
-        if (this.signUpModel.valid)
+
+        if (this.signUpModel.valid) {
             console.log("valid");
+            this.routerService.navigate(["/accounts"])
+        }
         else
             console.log("form invalid");
-            
+
 
     }
 

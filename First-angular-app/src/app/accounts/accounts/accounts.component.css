@@ -1,0 +1,14 @@
+mat-card{
+    min-width: 50%;
+    min-height: 75%;
+    margin-bottom: 40px;
+    width: fit-content;
+    height: fit-content;
+}
+mat-card mat-card-header{
+    align-self: center;
+}
+mat-card mat-card-actions{
+    align-self: center;
+    vertical-align: middle;
+}

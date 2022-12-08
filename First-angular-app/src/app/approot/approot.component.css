@@ -1,8 +1,9 @@
-heading{
-    /* position: fixed; */
-    text-align: center;
-    /* top: 0; */
-}
+
 mat-tab-group {
     background-color: #cdcece;
+}
+
+.logo{
+    width: 10%;
+    margin: 4px;
 }
