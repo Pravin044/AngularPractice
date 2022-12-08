@@ -1,0 +1,12 @@
+<app-navigationlinks>
+    <a [routerLink]="'./add'" title="Add device">
+        <button mat-raised-button color="primary"><mat-icon>add</mat-icon>Add device</button>
+    </a>
+    <a [routerLink]="'./'" title="List device">
+        <button mat-raised-button color="primary"><mat-icon>list_alt</mat-icon>List device</button>
+    </a>
+    <a [routerLink]="'./'" title="Edit device">
+        <button mat-raised-button color="primary"><mat-icon>edit</mat-icon>Edit device</button>
+    </a>
+</app-navigationlinks>
+<router-outlet></router-outlet>

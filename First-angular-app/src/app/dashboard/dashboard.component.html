@@ -1,0 +1,13 @@
+<mat-toolbar>
+    <app-navigationlinks>
+        <mat-chip-listbox aria-label="Fish selection">
+             <mat-chip-option [routerLink]="'./system'">System</mat-chip-option>
+             <mat-chip-option [routerLink]="'./area'">Area</mat-chip-option>
+             <mat-chip-option [routerLink]="'./device'">Device</mat-chip-option>
+        </mat-chip-listbox>
+    </app-navigationlinks>
+    <app-profile class="example-spacer"></app-profile>
+</mat-toolbar>
+<div>
+    <router-outlet></router-outlet>
+</div>

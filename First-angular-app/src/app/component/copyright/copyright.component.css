@@ -1,5 +1,5 @@
 .footer{
-    position: relative;
+    position: fixed;
     overflow: hidden;
     bottom: 0;
     left: 0;
@@ -8,4 +8,7 @@
     height: 30px;
     text-align: center;
     background-color: cornflowerblue;
+}
+.footer p{
+    font-size: small;
 }

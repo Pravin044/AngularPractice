@@ -10,10 +10,11 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from '@angular/material/card';
 import { MatInputModule} from '@angular/material/input';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { NavigationlinksComponent } from './navigationlinks/navigationlinks.component'
 @NgModule({
-    declarations:[HeadingComponent,CopyRightComponent, FeedbackComponent, HeaderComponent],
-    exports:[HeadingComponent,CopyRightComponent,FeedbackComponent,HeaderComponent],
+    declarations:[HeadingComponent,CopyRightComponent, FeedbackComponent, HeaderComponent, NavigationlinksComponent],
+    exports:[HeadingComponent,CopyRightComponent,FeedbackComponent,HeaderComponent,NavigationlinksComponent],
     imports:[DirectivesModule,CommonModule,ReactiveFormsModule,FormsModule,
         MatToolbarModule,MatIconModule,MatButtonModule,MatCardModule,MatInputModule]
 })

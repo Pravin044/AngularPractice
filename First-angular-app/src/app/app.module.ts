@@ -12,13 +12,26 @@ import { AccountsComponent } from "./accounts/accounts/accounts.component";
 import { LoginComponent } from "./accounts/login/login.component";
 import { SignUpComponent } from "./accounts/signup/signup.component";
 import { SingupRouteGuard } from "./route-guard/singup-route.guard";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon'
+import { AuthenticateGuard } from "./route-guard/authenticate.guard";
+import { SystemPanelComponent } from "./system/system-panel/system-panel.component";
+import { AreaPanelComponent } from "./area/area-panel/area-panel.component";
+import { DevicePanelComponent } from "./device/device-panel/device-panel.component";
+import { SystemModule } from "./system/system.module";
+import { AddSystemComponent } from "./system/add-system/add-system.component";
+import { AreaModule } from "./area/area.module";
+import { DeviceModule } from "./device/device.module";
+import { AddAreaComponent } from "./area/add-area/add-area.component";
+import { AddDeviceComponent } from "./device/add-device/add-device.component";
 
 
 //route configuration
 const routeConfig: Routes = [
     {
         path: "",
-        pathMatch:"full",
+        pathMatch: "full",
         redirectTo: "accounts"
     },
     {
@@ -31,7 +44,30 @@ const routeConfig: Routes = [
             {
                 path: "signup",
                 component: SignUpComponent,
-                canDeactivate:[SingupRouteGuard]
+                canDeactivate: [SingupRouteGuard]
+            }
+        ]
+    },
+    {
+        path: "dashboard",
+        component: DashboardComponent,
+        canActivate: [AuthenticateGuard],
+        children: [
+            {
+                path: "system", component: SystemPanelComponent,
+                children: [{
+                    path: "add", component: AddSystemComponent
+                }]
+            },
+            {
+                path: "area", component: AreaPanelComponent, children: [{
+                    path: "add", component: AddAreaComponent
+                }]
+            },
+            {
+                path: "device", component: DevicePanelComponent, children: [{
+                    path: "add", component: AddDeviceComponent
+                }]
             }
         ]
     }
@@ -40,14 +76,18 @@ const routeConfig: Routes = [
 
 
 @NgModule({
-    declarations: [AppRootComponent],
+    declarations: [AppRootComponent, DashboardComponent],
     imports: [BrowserModule,
         ComponentModule,
         AccountsModule,
         MatTabsModule,
         BrowserAnimationsModule,
         MatToolbarModule,
-        RouterModule.forRoot(routeConfig)],
+        RouterModule.forRoot(routeConfig),
+        MatChipsModule,
+        MatIconModule,
+        SystemModule,
+        AreaModule, DeviceModule],
     bootstrap: [AppRootComponent], //this component will be bootstraped means initially rendered.
     providers: [ConsoleLoggerService/*tightly coupled*/, { provide: "logger", useClass: ConsoleLoggerService }/*loosely coplued*/]
 })

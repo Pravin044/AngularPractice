@@ -14,10 +14,11 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { AccountsComponent } from './accounts/accounts.component';
 import { ComponentModule } from '../component/component.module';
 import {RouterModule, Routes } from '@angular/router'
+import { ProfileComponent } from '../profile/profile.component';
 
 @NgModule({
-    declarations: [LoginComponent, SignUpComponent, AccountsComponent],
-    exports: [LoginComponent, SignUpComponent, AccountsComponent],
+    declarations: [LoginComponent, SignUpComponent, AccountsComponent,ProfileComponent],
+    exports: [LoginComponent, SignUpComponent, AccountsComponent,ProfileComponent],
     imports: [DirectivesModule,
         FormsModule,
         ReactiveFormsModule,

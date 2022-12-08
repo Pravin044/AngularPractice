@@ -1,0 +1,7 @@
+app-navigationlinks a {
+
+    text-decoration: none;
+}
+app-navigationlinks a button{
+    margin: 2px;
+}
