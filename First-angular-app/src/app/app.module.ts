@@ -24,9 +24,12 @@ import { AppRouterModule } from "./app-routing.module";
         BrowserAnimationsModule,
         MatToolbarModule,
         MatChipsModule,
-        MatIconModule,AppRouterModule],
+        MatIconModule, AppRouterModule],
     bootstrap: [AppRootComponent], //this component will be bootstraped means initially rendered.
-    providers: [ConsoleLoggerService/*tightly coupled*/, { provide: "logger", useClass: ConsoleLoggerService }/*loosely coplued*/]
+    providers: [ConsoleLoggerService/*tightly coupled*/,
+        { provide: "logger", useClass: ConsoleLoggerService },/*loosely coplued*/
+        { provide: "BaseUrl", useValue: "http://localhost:3200" }
+    ]
 })
 export class AppModule {
 

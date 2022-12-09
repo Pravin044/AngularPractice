@@ -13,12 +13,14 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { AccountsComponent } from './accounts/accounts.component';
 import { ComponentModule } from '../component/component.module';
-import {RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router'
 import { ProfileComponent } from '../profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AccountService } from './services/account.services';
 
 @NgModule({
-    declarations: [LoginComponent, SignUpComponent, AccountsComponent,ProfileComponent],
-    exports: [LoginComponent, SignUpComponent, AccountsComponent,ProfileComponent],
+    declarations: [LoginComponent, SignUpComponent, AccountsComponent, ProfileComponent],
+    exports: [LoginComponent, SignUpComponent, AccountsComponent, ProfileComponent],
     imports: [DirectivesModule,
         FormsModule,
         ReactiveFormsModule,
@@ -29,7 +31,10 @@ import { ProfileComponent } from '../profile/profile.component';
         MatButtonModule,
         MatIconModule,
         MatGridListModule,
-        ComponentModule,RouterModule]
+        ComponentModule,
+        RouterModule,
+        HttpClientModule],
+    providers: [AccountService]
 
 })
 export class AccountsModule {

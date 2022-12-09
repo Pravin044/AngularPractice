@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { ComponentModule } from '../component/component.module';
 import { AddDeviceComponent } from './add-device/add-device.component';
 import { DeviceRoutingModule } from './device-routing.module';
+import { DeviceListComponent } from './device-list/device-list.component';
 
 
 @NgModule({
   declarations: [
     DevicePanelComponent,
-    AddDeviceComponent
+    AddDeviceComponent,
+    DeviceListComponent
   ],
   imports: [
     CommonModule,

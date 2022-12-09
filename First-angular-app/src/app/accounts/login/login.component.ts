@@ -2,6 +2,7 @@ import { Component, ViewChild, Inject } from '@angular/core'
 import { ConsoleLoggerService } from 'src/app/Services/consoleLogger.service';
 import { ILogger } from 'src/app/Services/loggerServiceContract';
 import { Router } from '@angular/router';
+import { AccountService } from '../services/account.services';
 
 @Component({
     selector: 'login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
     loggerRef: ILogger;
-    constructor(@Inject("logger") loggerRef: ILogger, private router: Router) {
+    constructor(@Inject("logger") loggerRef: ILogger, private router: Router, private accountServiceRef: AccountService) {
         this.loggerRef = loggerRef;
 
     }
@@ -25,13 +26,28 @@ export class LoginComponent {
     login(): void {
         this.IsStatusMsg = true;
         this.loggerRef.write("Login button clicked")
-        if (this.username == "admin" && this.password == "Test123") {
-            this.StatusMsg = " valid credentials";
+        this.accountServiceRef.validate({ userName: this.username, password: this.password }).subscribe((result) => {
+            console.log(result);
             this.router.navigate(["/dashboard"]);
-        }
-        else {
-            this.StatusMsg = " Invalid credentials";
-        }
+
+        },
+            (error) => {
+                console.log(error);
+
+                alert("Please enter correct credentials");
+
+            },
+            () => {
+                console.log("Service communication is completed");
+            }
+        )
+        // if (this.username == "admin" && this.password == "Test123") {
+        //     this.StatusMsg = " valid credentials";
+        //     this.router.navigate(["/dashboard"]);
+        // }
+        // else {
+        //     this.StatusMsg = " Invalid credentials";
+        // }
     }
     clear(): void {
         this.IsStatusMsg = false;
