@@ -6,6 +6,7 @@ import { ComponentModule } from '../component/component.module';
 import {RouterModule,Route} from '@angular/router'
 import { MatButtonModule } from '@angular/material/button';
 import { AddAreaComponent } from './add-area/add-area.component';
+import { AreaRoutingModule } from './area-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddAreaComponent } from './add-area/add-area.component';
     MatIconModule,
     ComponentModule,
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    AreaRoutingModule
   ]
 })
 export class AreaModule { }

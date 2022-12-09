@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button'
 import { RouterModule } from '@angular/router';
 import { ComponentModule } from '../component/component.module';
 import { AddDeviceComponent } from './add-device/add-device.component';
+import { DeviceRoutingModule } from './device-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AddDeviceComponent } from './add-device/add-device.component';
     MatButtonModule,
     MatIconModule,
     RouterModule,
-    ComponentModule
+    ComponentModule,
+    DeviceRoutingModule
   ]
 })
 export class DeviceModule { }

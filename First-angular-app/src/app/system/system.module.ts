@@ -9,6 +9,7 @@ import {MatGridListModule} from '@angular/material/grid-list'
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button'
+import { SystemRoutingModule } from './system-routing.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatButtonModule} from '@angular/material/button'
     MatGridListModule,
     MatIconModule,
     MatChipsModule,
-    MatButtonModule
+    MatButtonModule,
+    SystemRoutingModule
   ]
 })
 export class SystemModule { }
